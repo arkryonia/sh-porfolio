@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { LinkedinIcon, Mail, Twitter } from 'lucide-react';
 import Link from 'next/link';
+import { socialLinks } from '../../constants/constants';
 
 const Contact = () => {
   return (
@@ -12,29 +12,11 @@ const Contact = () => {
       <div className="w-full max-w-3xl space-y-8">
         {/* Social media buttons + email */}
         <div className="flex items-center justify-center space-x-4">
-          <Link target="_blank" rel="noopener noreferrer" href="https://x.com/alololagba">
-            <Button size="icon">
-              <Twitter />
-            </Button>
-          </Link>
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/sounton-hodonou/"
-          >
-            <Button size="icon">
-              <LinkedinIcon />
-            </Button>
-          </Link>
-          <Link
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.linkedin.com/in/sounton-hodonou/"
-          >
-            <Button size="icon">
-              <Mail />
-            </Button>
-          </Link>
+          {socialLinks.map(link => (
+            <Link key={link.id} target="_blank" rel="noopener noreferrer" href={link.href}>
+              <Button size="icon">{link.icon}</Button>
+            </Link>
+          ))}
         </div>
       </div>
     </div>

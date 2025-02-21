@@ -1,15 +1,12 @@
 import { Separator } from '@radix-ui/react-separator';
-import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { menuItems } from '../../constants/constants';
 import { ThemeSwitcher } from './theme-switcher';
 
-const Hero = ({ isVisible }: { isVisible: boolean }) => {
+const Hero = () => {
   return (
-    <motion.div
-      className="flex flex-col items-center justify-center min-h-screen w-full px-4 py-8"
-      animate={{ opacity: isVisible ? 1 : 0 }}
-    >
+    <div className="flex flex-col items-center justify-center min-h-screen w-full px-4 py-8">
       <Image
         src="/me.jpg"
         alt="Sounton Hodonou"
@@ -18,18 +15,11 @@ const Hero = ({ isVisible }: { isVisible: boolean }) => {
         className="rounded-full mb-8 md:mb-14 grayscale hover:grayscale-0 transition duration-300 ease-in-out"
       />
       <nav className="flex flex-wrap justify-center gap-4 md:space-x-4">
-        <Link href="#about" className="hover:underline">
-          About
-        </Link>
-        <Link href="#skills" className="hover:underline">
-          Skills
-        </Link>
-        <Link href="#projects" className="hover:underline">
-          Projects
-        </Link>
-        <Link href="#contact" className="hover:underline">
-          Contact
-        </Link>
+        {menuItems.map(item => (
+          <Link key={item.id} href={item.href} className="hover:underline">
+            {item.name}
+          </Link>
+        ))}
       </nav>
       <Separator className="my-4" />
       <h1 className="text-4xl md:text-5xl lg:text-8xl font-black text-center">SOUNTON HODONOU</h1>
@@ -37,7 +27,7 @@ const Hero = ({ isVisible }: { isVisible: boolean }) => {
         Empowering Digital Solutions with Innovative Technology and Cultural Insights.
       </p>
       <ThemeSwitcher />
-    </motion.div>
+    </div>
   );
 };
 
