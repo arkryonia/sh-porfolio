@@ -1,11 +1,15 @@
 import { Separator } from '@radix-ui/react-separator';
+import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ThemeSwitcher } from './theme-switcher';
 
-const Hero = () => {
+const Hero = ({ isVisible }: { isVisible: boolean }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full px-4 py-8">
+    <motion.div
+      className="flex flex-col items-center justify-center min-h-screen w-full px-4 py-8"
+      animate={{ opacity: isVisible ? 1 : 0 }}
+    >
       <Image
         src="/me.jpg"
         alt="Sounton Hodonou"
@@ -23,9 +27,6 @@ const Hero = () => {
         <Link href="#projects" className="hover:underline">
           Projects
         </Link>
-        <Link href="#testimonials" className="hover:underline">
-          Testimonials
-        </Link>
         <Link href="#contact" className="hover:underline">
           Contact
         </Link>
@@ -36,7 +37,7 @@ const Hero = () => {
         Empowering Digital Solutions with Innovative Technology and Cultural Insights.
       </p>
       <ThemeSwitcher />
-    </div>
+    </motion.div>
   );
 };
 

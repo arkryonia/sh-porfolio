@@ -15,8 +15,8 @@ const Skills = () => {
               <ul className="space-y-2">
                 <li>React</li>
                 <li>Next.js</li>
-                <li>Astro.js</li>
                 <li>Flutter</li>
+                <li>Astro.js</li>
                 <li>HTML 5</li>
                 <li>CSS 3</li>
               </ul>
@@ -28,13 +28,12 @@ const Skills = () => {
           <CardHeader>
             <CardTitle>Backend</CardTitle>
             <CardContent>
-              <ul className="mt-4">
+              <ul className="space-y-2">
                 <li>Node.js</li>
                 <li>Express</li>
                 <li>Java</li>
                 <li>Spring Boot</li>Frontend
                 <li>FastAPI</li>
-                <li>Flask</li>
               </ul>
             </CardContent>
           </CardHeader>
@@ -43,7 +42,7 @@ const Skills = () => {
           <CardHeader>
             <CardTitle>Database</CardTitle>
             <CardContent>
-              <ul className="mt-4">
+              <ul className="space-y-2">
                 <li>PostgreSQL</li>
                 <li>ObjectDB</li>
                 <li>MySQL</li>
