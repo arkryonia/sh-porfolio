@@ -17,8 +17,8 @@ const HomePage = () => {
         <CircleArrowUp />
       </Button>
       <div className="flex flex-col items-center justify-center min-h-screen">
-        <Hero isVisible />
-        <About isVisible />
+        <Hero />
+        <About />
         <Skills />
         <Projects />
         {/* Contact section */}

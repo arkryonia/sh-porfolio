@@ -1,11 +1,8 @@
-import { motion } from 'motion/react';
-
-const About = ({ isVisible }: { isVisible: boolean }) => {
+const About = () => {
   return (
-    <motion.div
+    <div
       id="about"
       className="flex flex-col items-center justify-center w-full min-h-screen px-4 py-8"
-      animate={{ opacity: isVisible ? 1 : 0 }}
     >
       <h2 className="text-3xl font-bold mb-8">About</h2>
       <div className="w-full max-w-3xl space-y-8">
@@ -25,7 +22,7 @@ const About = ({ isVisible }: { isVisible: boolean }) => {
           sustainable development.
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
